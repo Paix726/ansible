@@ -1,0 +1,20 @@
+---
+# tasks file for mvn
+   - name: Install git
+     apt:
+        name: git
+        state: latest
+   - name: install maven
+     apt:
+        name: maven
+        state: latest
+   - name: copy code
+     git:
+        repo: https://github.com/Paix726/jenkins-jobs.git
+        dest: /home/ubuntu/mavenpro
+        clone: yes
+        update: yes
+   - name: Maven clean install
+     command: mvn clean install
+     args:
+             chdir: /home/ubuntu/mavenpro/mavensapmlepro/my-webapp

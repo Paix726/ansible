@@ -1,0 +1,12 @@
+---
+- hosts: all
+  become: true
+  tasks:
+    - name: Install mongodb
+      apt:
+        name: mongodb
+        state: latest
+    - name: Start mongodb service
+      service:
+        name: mongodb
+        state: started

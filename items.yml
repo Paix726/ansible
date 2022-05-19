@@ -1,0 +1,14 @@
+---
+- hosts: all
+  become: yes
+  tasks:
+    - name: install
+      apt:
+        name: "{{ item }}"
+        update_cache: yes
+      with_items:
+        - vim
+        - curl
+        - unzip
+        - tree
+        - zip

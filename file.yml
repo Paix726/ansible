@@ -1,0 +1,13 @@
+---
+
+- hosts: all
+  become: true
+  tasks:
+    - name: Create a new file with permissions
+      file:
+        path: "/home/ubuntu/Aatmaani.txt"
+        state: touch
+        mode: 0755
+        owner: root
+        group: root
+
